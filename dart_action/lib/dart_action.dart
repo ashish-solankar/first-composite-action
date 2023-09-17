@@ -2,7 +2,7 @@ import 'dart:io';
 import 'package:xml/xml.dart';
 
 Future<int> parseXML(List<String>? arguments) async {
-  final currentDirectory = Directory.current.path;
+  final currentDirectory = '${Directory.current.path}/dart_action';
   final filePath = arguments?.first??"";
   final file = File(filePath);
   final contents = file.readAsStringSync();
