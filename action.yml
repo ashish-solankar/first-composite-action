@@ -1,23 +1,18 @@
 name: 'First composite action'
-description: 'Greet someone'
+description: 'unit test result comment'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  xml-path:  # id of input
+    description: 'your path to xml junit result'
     required: true
-    default: 'World'
-outputs:
-  random-number:
-    description: "Random number"
-    value: ${{ steps.random-number-generator.outputs.random-number }}
+    default: ''
 runs:
   using: "composite"
   steps:
-    - run: echo Hello ${{ inputs.who-to-greet }}.
+    - run: dart.sh '${{ inputs.xml-path }}'
       shell: bash
-    - id: random-number-generator
-      run: echo "random-number=$(echo $RANDOM)" >> $GITHUB_OUTPUT
-      shell: bash
-    - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
-      shell: bash
-    - run: goodbye.sh
-      shell: bash
+    - name: Add comment
+      uses: machine-learning-apps/pr-comment@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        path: dart_action/output/result.txt

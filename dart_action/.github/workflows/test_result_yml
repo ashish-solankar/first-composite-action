@@ -1,0 +1,36 @@
+name: Unit Tests Result Generation
+on: [workflow_dispatch, pull_request]
+jobs:
+  UnitTestsResult:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          ref: ${{ github.head_ref }}
+
+      - uses: actions/setup-java@v3
+        with:
+          java-version: "12.x"
+          distribution: "adopt-openj9"
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: "stable"
+          flutter-version: "3.7.x"
+
+      - name: Setup flutter
+        run: dart pub get
+
+      - name: setting up jUnitReport
+        run: dart pub global activate junitreport
+
+      - name: Starting All Unit tests
+        run: dart --no-color test --machine dart_action/test -j, --concurrency=1 | tee >(tojunit --output dart_action/test/test_result.xml)
+
+      - name: Comment result action
+        uses: ashish-solankar/first-composite-action@main
+        with:
+          path: dart_action/test/test_result.xml
+      

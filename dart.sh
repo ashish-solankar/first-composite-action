@@ -1,0 +1,1 @@
+dart run dart_action/dart_action.dart '$1'

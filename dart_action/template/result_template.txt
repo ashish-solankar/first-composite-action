@@ -1,0 +1,4 @@
+## Test Results in {time}
+| :white_check_mark: Passed | :red_circle: Failed | :warning: Error | :bar_chart: Total |
+|--------|--------|--------|--------|
+| {passed} | {failures} | {errors} | {tests} |
