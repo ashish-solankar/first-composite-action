@@ -20,9 +20,6 @@ jobs:
           channel: "stable"
           flutter-version: "3.7.x"
 
-      - name: Setup flutter
-        run: dart pub get
-
       - name: setting up jUnitReport
         run: dart pub global activate junitreport
 
