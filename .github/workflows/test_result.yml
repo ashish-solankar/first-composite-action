@@ -23,12 +23,6 @@ jobs:
       - name: setting up jUnitReport
         run: dart pub global activate junitreport
 
-      - name: setting up dart
-        run: cd dart_action && dart pub get
-
-      - name: Starting All Unit tests
-        run: cd dart_action && dart test test -j, --concurrency=1 | tee >(tojunit --output test/test_result.xml)
-
       - name: Comment result action
         uses: ashish-solankar/first-composite-action@main
         with:
