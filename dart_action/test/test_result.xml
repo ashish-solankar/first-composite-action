@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite errors="1" failures="0" tests="1" skipped="0" name=".Users.as4142.Documents.gitCheckouts.rfx_wfm_mobf_utils.example.test.logger_test.logger_backup" timestamp="2023-08-26T19:26:49">
+    <properties>
+      <property name="platform" value="vm"/>
+    </properties>
+    <testcase classname=".Users.as4142.Documents.gitCheckouts.rfx_wfm_mobf_utils.example.test.logger_test.logger_backup" name="Logger File Backup Test" time="18.148">
+      <error message="PathNotFoundException: Cannot rename file to '/Users/as4142/Documents/gitCheckouts/rfx-wfm-mobf-utils/test/generated_test_files/output2.log', path = '/Users/as4142/Documents/gitCheckouts/rfx-wfm-mobf-utils/test/generated_test_files/output1.log' (OS Error: No such file or directory, errno = 2)">dart:io                                                            _File.rename
+package:reflexis_mobf_utils/src/logger/logger_manager.dart 247:14  LoggerManager.renameFile
+package:reflexis_mobf_utils/src/logger/logger_manager.dart 235:7   LoggerManager.renamingLoop
+package:reflexis_mobf_utils/src/logger/logger_manager.dart 203:11  LoggerManager.checkFileSize
+package:reflexis_mobf_utils/src/logger/logger_manager.dart 132:13  LoggerManager.info
+package:reflexis_mobf_utils/src/logger/logger_manager.dart 126:21  LoggerManager.i
+example/test/logger_test/logger_backup_test.dart 61:25             main.&lt;fn>
+===== asynchronous gap ===========================
+dart:async                                                         _CustomZone.registerUnaryCallback
+example/test/logger_test/logger_backup_test.dart 34:5              main.&lt;fn>
+</error>
+    </testcase>
+  </testsuite>
+  <testsuite errors="0" failures="0" tests="1" skipped="0" name=".Users.as4142.Documents.gitCheckouts.rfx_wfm_mobf_utils.example.test.null_safety_test.null_safety" timestamp="2023-08-26T19:26:49">
+    <properties>
+      <property name="platform" value="vm"/>
+    </properties>
+    <testcase classname=".Users.as4142.Documents.gitCheckouts.rfx_wfm_mobf_utils.example.test.null_safety_test.null_safety" name="null saftey test" time="0.011"/>
+  </testsuite>
+</testsuites>
