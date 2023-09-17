@@ -24,7 +24,7 @@ jobs:
         run: dart pub global activate junitreport
 
       - name: Starting All Unit tests
-        run: dart --no-color test --machine dart_action/test -j, --concurrency=1 | tee >(tojunit --output dart_action/test/test_result.xml)
+        run: dart test dart_action/test -j, --concurrency=1 | tee >(tojunit --output dart_action/test/test_result.xml)
 
       - name: Comment result action
         uses: ashish-solankar/first-composite-action@main

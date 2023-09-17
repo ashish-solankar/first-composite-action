@@ -16,7 +16,7 @@ runs:
       shell: bash
     - run: pwd
       shell: bash
-    - run: dart run dart_action/dart_action.dart '${{ inputs.xml-path }}'
+    - run: dart run dart_action/bin/dart_action.dart '${{ inputs.xml-path }}'
       shell: bash
     - name: Add comment
       uses: machine-learning-apps/pr-comment@master
