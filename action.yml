@@ -12,6 +12,7 @@ inputs:
 runs:
   using: "composite"
   steps:
+    - run: cd dart_action && dart pub get
     - run: ls
       shell: bash
     - run: pwd
