@@ -5,6 +5,10 @@ inputs:
     description: 'your path to xml junit result'
     required: true
     default: ''
+  GITHUB_TOKEN:  # id of input
+    description: 'your github tokens'
+    required: true
+    default: ''
 runs:
   using: "composite"
   steps:
@@ -13,6 +17,6 @@ runs:
     - name: Add comment
       uses: machine-learning-apps/pr-comment@master
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
       with:
         path: dart_action/output/result.txt

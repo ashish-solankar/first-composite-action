@@ -32,5 +32,6 @@ jobs:
       - name: Comment result action
         uses: ashish-solankar/first-composite-action@main
         with:
-          path: dart_action/test/test_result.xml
+          xml-path: dart_action/test/test_result.xml
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
